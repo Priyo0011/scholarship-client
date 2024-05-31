@@ -1,9 +1,12 @@
+import Banner from "../../components/Shared/Banner";
+import Navbar from "../../components/Shared/Navbar";
 
 
 const Home = () => {
     return (
-        <div>
-            <h2 className="text-9xl">home</h2>
+        <div className="max-w-[1920px] mx-auto">
+            <Navbar></Navbar>
+            <Banner></Banner>
         </div>
     );
 };
