@@ -103,7 +103,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar fixed z-10 bg-opacity-50 bg-[#F1F3F3] max-w-[1920px] px-8 py-4">
+      <div className="navbar fixed z-10 bg-opacity-50 bg-[#F1F3F3] max-w-[1920px] md:px-8 md:py-4">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -139,7 +139,7 @@ const Navbar = () => {
                 height="50"
               />
               <div className="text-[#890C25]">
-                <h1 className="text-xl font-bold uppercase">victory</h1>
+                <h1 className="md:text-xl font-bold uppercase">victory</h1>
                 <h2 className="uppercase font-normal text-sm">scholarship</h2>
               </div>
             </div>
