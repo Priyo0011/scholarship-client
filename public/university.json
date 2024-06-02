@@ -1,0 +1,110 @@
+[
+  {
+    "_id": "1",
+    "university_name": "Harvard University",
+    "university_image": "https://i.ibb.co/f4BkksW/Hu.jpg",
+    "scholarship_category": "Undergraduate",
+    "university_location": {
+      "country": "USA",
+      "city": "Cambridge"
+    },
+    "application_deadline": "2024-12-01",
+    "subject_category": "All Subjects",
+    "scholarship_description": "Harvard offers scholarships to help undergraduate students afford their education.",
+    "stipend": "500",
+    "post_date": "2023-06-01",
+    "service_charge": "100",
+    "application_fees": "75",
+    "rating": 5
+  },
+  {
+    "_id": "2",
+    "university_name": "University of Oxford",
+    "university_image": "https://i.ibb.co/0mkFrk9/Ou.jpg",
+    "scholarship_category": "Graduate",
+    "university_location": {
+      "country": "United Kingdom",
+      "city": "Oxford"
+    },
+    "application_deadline": "2024-11-15",
+    "subject_category": "Humanities",
+    "scholarship_description": "Oxford offers numerous scholarships for graduate students in various fields of study.",
+    "stipend": "700",
+    "post_date": "2023-05-15",
+    "service_charge": "150",
+    "application_fees": "60",
+    "rating": 4.5
+  },
+  {
+    "_id": "3",
+    "university_name": "University of Tokyo",
+    "university_image": "https://i.ibb.co/826fPwF/Tu.jpg",
+    "scholarship_category": "Postdoctoral",
+    "university_location": {
+      "country": "Japan",
+      "city": "Tokyo"
+    },
+    "application_deadline": "2024-10-31",
+    "subject_category": "Science and Technology",
+    "scholarship_description": "The University of Tokyo provides scholarships for postdoctoral research in science and technology.",
+    "stipend": "600",
+    "post_date": "2023-04-30",
+    "service_charge": "200",
+    "application_fees": "50",
+    "rating": 4
+  },
+  {
+    "_id": "4",
+    "university_name": "University of Melbourne",
+    "university_image": "https://i.ibb.co/VVV9JWX/Mu.jpg",
+    "scholarship_category": "Undergraduate",
+    "university_location": {
+      "country": "Australia",
+      "city": "Melbourne"
+    },
+    "application_deadline": "2024-09-30",
+    "subject_category": "Business",
+    "scholarship_description": "Melbourne University offers scholarships for undergraduate business students.",
+    "stipend": "1000",
+    "post_date": "2023-03-01",
+    "service_charge": "120",
+    "application_fees": "55",
+    "rating": 4.5
+  },
+  {
+    "_id": "5",
+    "university_name": "ETH Zurich",
+    "university_image": "https://i.ibb.co/9c2bBSd/EZu.jpg",
+    "scholarship_category": "Graduate",
+    "university_location": {
+      "country": "Switzerland",
+      "city": "Zurich"
+    },
+    "application_deadline": "2024-08-15",
+    "subject_category": "Engineering",
+    "scholarship_description": "ETH Zurich offers scholarships for graduate students in engineering disciplines.",
+    "stipend": "200",
+    "post_date": "2023-02-20",
+    "service_charge": "100",
+    "application_fees": "40",
+    "rating": 5
+  },
+  {
+    "_id": "6",
+    "university_name": "National University of Singapore",
+    "university_image": "https://i.ibb.co/rtNPbTv/NUS.png",
+    "scholarship_category": "Postdoctoral",
+    "university_location": {
+      "country": "Singapore",
+      "city": "Singapore"
+    },
+    "application_deadline": "2024-07-01",
+    "subject_category": "Medicine",
+    "scholarship_description": "NUS provides postdoctoral scholarships for research in medical fields.",
+    "stipend": "600",
+    "post_date": "2023-01-10",
+    "service_charge": "150",
+    "application_fees": "65",
+    "rating": 4
+  }
+]

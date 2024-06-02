@@ -3,11 +3,6 @@ import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  const signOut = () => {
-    logOut()
-      .then(() => {})
-      .catch((error) => console.log(error));
-  };
   const navLinks = (
     <>
       <li>
@@ -64,10 +59,12 @@ const Navbar = () => {
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 <img
-                  src={
-                    user?.photoURL ||
-                    "https://i.ibb.co/D4DRmzc/istockphoto-1337144146-612x612.jpg"
-                  }
+                  className="rounded-full"
+                  referrerPolicy="no-referrer"
+                  src={user && user.photoURL}
+                  alt="profile"
+                  height="30"
+                  width="30"
                 />
               </div>
             </label>
@@ -76,12 +73,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <button className="btn btn-sm  btn-ghost">
-                  {user?.displayName || "user name not found"}
-                </button>
-              </li>
-              <li>
-                <button onClick={signOut} className="btn btn-sm  btn-ghost">
+                <button onClick={logOut} className="btn btn-sm  btn-ghost">
                   Logout
                 </button>
               </li>
@@ -147,7 +139,7 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="navbar-center hidden lg:flex">
-            <ul className="flex gap-6 text-sm">{navLinks}</ul>
+            <ul className="flex items-center gap-6 text-sm">{navLinks}</ul>
           </div>
         </div>
       </div>

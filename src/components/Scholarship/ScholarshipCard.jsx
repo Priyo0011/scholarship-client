@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
-const ScholarshipCard = ({ item }) => {
+const ScholarshipCard = ({ university }) => {
   const {
     university_name,
     university_image,
@@ -11,7 +11,8 @@ const ScholarshipCard = ({ item }) => {
     subject_category,
     rating,
     application_fees,
-  } = item || {};
+    _id
+  } = university || {};
   return (
     <div className=" hover:shadow-lg hover:shadow-[#890C25] rounded-lg">
       <figure>
@@ -63,9 +64,9 @@ const ScholarshipCard = ({ item }) => {
           </h1>
         </div>
         <div className="mt-8">
-          <Link>
+          <Link to={`/university/${_id}`}>
             <button className="w-full py-2 rounded-xl bg-[#890C25] text-white uppercase hover:shadow-lg hover:shadow-[#9e6372]">
-              View Details
+            Scholarship Details
             </button>
           </Link>
         </div>

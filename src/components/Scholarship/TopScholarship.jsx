@@ -10,7 +10,7 @@ const TopScholarship = () => {
   useEffect(() => {
     const fetchScholarship = async () => {
       try {
-        const res = await fetch("scholarship.json");
+        const res = await fetch("http://localhost:9000/university");
         const jsonScholarship = await res.json();
         setScholarship(jsonScholarship);
       } catch (error) {
@@ -38,8 +38,8 @@ const TopScholarship = () => {
         </p>
       </div>
       <div className="grid md:grid-cols-3 gap-16">
-        {sixData.map((item) => (
-          <ScholarshipCard key={item._id} item={item}></ScholarshipCard>
+        {sixData.map((university) => (
+          <ScholarshipCard key={university._id} university={university}></ScholarshipCard>
         ))}
       </div>
       <div className="text-center mt-14">
