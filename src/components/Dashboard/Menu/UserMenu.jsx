@@ -7,7 +7,7 @@ const UserMenu = () => {
     <>
       <MenuItem
         label="My Application"
-        address="/dashboard"
+        address="my-application"
         icon={IoDocumentText}
       ></MenuItem>
       <MenuItem

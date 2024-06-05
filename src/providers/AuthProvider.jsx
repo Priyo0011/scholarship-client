@@ -65,9 +65,9 @@ const AuthProvider = ({ children }) => {
       status: 'Verified',
     }
     const { data } = await axios.put(`${import.meta.env.VITE_API_URL}/user`,currentUser)
-    return data
+    return data;
+    
   }
-  
     // onAuthStateChange
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, currentUser => {

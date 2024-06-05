@@ -8,6 +8,9 @@ import SignUp from "../pages/SignUp/SignUp";
 import DashboardLayout from "../Layout/DashboardLayout";
 import Profile from "../pages/Dashbord/Common/Profile";
 import ManageUsers from "../pages/Dashbord/Admin/ManageUsers";
+import Common from "../pages/Dashbord/Common/Common";
+import AddScholarship from "../pages/Dashbord/Moderator/AddScholarship";
+import ManageScholarships from "../pages/Dashbord/Moderator/ManageScholarships";
 
 export const router = createBrowserRouter([
   {
@@ -41,6 +44,18 @@ export const router = createBrowserRouter([
     path: '/dashboard',
     element:<DashboardLayout></DashboardLayout>,
     children:[
+      {
+        index:true,
+        element: <Common></Common>,
+      },
+      {
+        path:'add-scholarship',
+        element: <AddScholarship></AddScholarship>,
+      },
+      {
+        path:'manage-scholarships',
+        element: <ManageScholarships></ManageScholarships>,
+      },
       {
         path: "profile",
         element: <Profile></Profile>,
