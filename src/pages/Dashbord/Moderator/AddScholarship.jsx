@@ -5,8 +5,10 @@ import { useMutation } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const AddScholarship = () => {
+  const { user } = useAuth()
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
   const [loading, setLoading] = useState(false);
@@ -16,9 +18,8 @@ const AddScholarship = () => {
       return data;
     },
     onSuccess: () => {
-      console.log("Data Saved Successfully");
       toast.success("Scholarship Added Successfully!");
-      navigate("manage-scholarships");
+      navigate("/dashboard/manage-scholarships");
       setLoading(false);
     },
   });
@@ -42,6 +43,11 @@ const AddScholarship = () => {
     const post_date = form.post_date.value;
     const posted_user_email = form.posted_user_email.value;
     const scholarship_description = form.scholarship_description.value;
+    const host = {
+      name: user?.displayName,
+      image: user?.photoURL,
+      email: user?.email,
+    }
 
     try {
       const image_url = await imageUpload(university_image);
@@ -64,6 +70,7 @@ const AddScholarship = () => {
         post_date,
         posted_user_email,
         scholarship_description,
+        host,
       };
       await mutateAsync(scholarshipData);
     } catch (err) {
