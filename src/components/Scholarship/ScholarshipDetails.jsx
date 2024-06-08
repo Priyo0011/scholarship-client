@@ -1,14 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
 import LoadingSpinner from "../Shared/LoadingSpinner";
 import useAxiosCommon from "../../hooks/useAxiosCommon";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Rating } from "@smastrom/react-rating";
 import "@smastrom/react-rating/style.css";
+import { useState } from "react";
+import ApplyModal from "../Modal/ApplyModal";
+import useAuth from "../../hooks/useAuth";
 const ScholarshipDetails = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const { id } = useParams();
   const axiosCommon = useAxiosCommon();
-
-  const { data: university = {}, isLoading } = useQuery({
+const {user}=useAuth()
+  const { data: university = {}, isLoading ,refetch} = useQuery({
     queryKey: ["university", id],
     queryFn: async () => {
       const { data } = await axiosCommon.get(`/university/${id}`);
@@ -17,7 +21,10 @@ const ScholarshipDetails = () => {
   });
 
   if (isLoading) return <LoadingSpinner />;
-
+  const closeModal = () => {
+    setIsOpen(false)
+  }
+  const totalPrice = parseInt(university.service_charge) + parseInt(university.application_fees);
   return (
     <div className="md:py-32 py-10 md:px-40 px-2">
       <figure>
@@ -107,11 +114,25 @@ const ScholarshipDetails = () => {
             </h1>
           </div>
           <div className="mt-8">
-            <Link>
-              <button className=" px-3 py-2 rounded-xl bg-[#890C25] text-white uppercase hover:shadow-lg hover:shadow-[#9e6372]">
+            <div>
+              <button onClick={() => setIsOpen(true)} className=" px-3 py-2 rounded-xl bg-[#890C25] text-white uppercase hover:shadow-lg hover:shadow-[#9e6372]">
                 Apply Scholarship
               </button>
-            </Link>
+            </div>
+            <ApplyModal
+            isOpen={isOpen}
+            refetch={refetch}
+            closeModal={closeModal}
+            applyInfo={{
+              ...university,
+              price: totalPrice,
+              user: {
+                name: user?.displayName,
+                email: user?.email,
+                image: user?.photoURL,
+              },
+            }}
+            ></ApplyModal>
           </div>
         </div>
         <div className="p-6 w-1/2">

@@ -11,6 +11,9 @@ import ManageUsers from "../pages/Dashbord/Admin/ManageUsers";
 import Common from "../pages/Dashbord/Common/Common";
 import AddScholarship from "../pages/Dashbord/Moderator/AddScholarship";
 import ManageScholarships from "../pages/Dashbord/Moderator/ManageScholarships";
+import MyApplication from "../pages/Dashbord/User/MyApplication";
+import AllAppliedScholarship from "../pages/Dashbord/Moderator/AllAppliedScholarship";
+import ApplyForm from "../pages/Dashbord/User/ApplyForm";
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +58,18 @@ export const router = createBrowserRouter([
       {
         path:'manage-scholarships',
         element: <ManageScholarships></ManageScholarships>,
+      },
+      {
+        path:'my-application',
+        element: <MyApplication></MyApplication>,
+      },
+      {
+        path:'manage-applied-scholarship',
+        element: <AllAppliedScholarship></AllAppliedScholarship>,
+      },
+      {
+        path:'apply-form',
+        element: <ApplyForm></ApplyForm>,
       },
       {
         path: "profile",

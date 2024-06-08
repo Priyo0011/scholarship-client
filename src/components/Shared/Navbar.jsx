@@ -19,18 +19,6 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
-          to="/contact-us"
-          className={({ isActive }) =>
-            isActive
-              ? "font-semibold text-[#890C25] text-sm hover:underline"
-              : "font-semibold  text-sm hover:underline"
-          }
-        >
-          CONTACT US
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
           to="all-scholarship"
           className={({ isActive }) =>
             isActive

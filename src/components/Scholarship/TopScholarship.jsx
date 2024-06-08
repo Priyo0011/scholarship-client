@@ -44,7 +44,7 @@ const TopScholarship = () => {
       </div>
       <div className="text-center mt-14">
         <Link to="/all-scholarship">
-          <button className="px-10 py-4 rounded-full bg-[#890C25] text-white uppercase text-xl hover:shadow-lg hover:shadow-[#9e6372]">
+          <button className="outline px-10 py-2 rounded-full text-[#890C25] uppercase text-xl hover:shadow-lg hover:shadow-[#9e6372]">
             All scholarship
           </button>
         </Link>

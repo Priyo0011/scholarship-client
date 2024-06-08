@@ -6,8 +6,6 @@ import ScholarshipCard from "./ScholarshipCard";
 
 const AllScholarship = () => {
   const axiosCommon = useAxiosCommon();
-
-
   const { data: university = [], isLoading } = useQuery({
     queryKey: ["university"],
     queryFn: async () => {
@@ -26,8 +24,6 @@ const AllScholarship = () => {
               className="px-6 py-2 text-gray-700 placeholder-gray-500 bg-white outline-none focus:placeholder-transparent"
               type="text"
               name="search"
-              placeholder=""
-              aria-label=""
             />
 
             <button className="px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#890C25] rounded-md focus:outline-none">

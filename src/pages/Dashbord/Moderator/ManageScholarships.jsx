@@ -1,8 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 import ScholarshipDataRow from "../../../components/Dashboard/TableRows/ScholarshipDataRow";
+import toast from "react-hot-toast";
 
 const ManageScholarships = () => {
 
@@ -21,6 +22,29 @@ const ManageScholarships = () => {
       return data
     },
   })
+  //   delete
+  const { mutateAsync } = useMutation({
+    mutationFn: async id => {
+      const { data } = await axiosSecure.delete(`/scholarship/${id}`)
+      return data
+    },
+    onSuccess: data => {
+      console.log(data)
+      refetch()
+      toast.success('Successfully deleted.')
+    },
+  })
+
+  //  Handle Delete
+  const handleDelete = async id => {
+    console.log(id)
+    try {
+      await mutateAsync(id)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  
   if (isLoading) return <LoadingSpinner />
   return (
     <div className="container mx-auto px-4 sm:px-8">
@@ -85,6 +109,8 @@ const ManageScholarships = () => {
                     <ScholarshipDataRow
                       key={scholarships._id}
                       scholarship={scholarship}
+                      refetch={refetch}
+                      handleDelete={handleDelete}
                     />
                   ))}
               </tbody>

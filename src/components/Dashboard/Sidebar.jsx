@@ -9,12 +9,12 @@ import MenuItem from "./Menu/MenuItem";
 import ModeratorMenu from "./Menu/ModeratorMenu";
 import AdminMenu from "./Menu/AdminMenu";
 import UserMenu from "./Menu/UserMenu";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const { logOut } = useAuth();
   const [isActive, setActive] = useState(false);
   const [role] = useRole();
-  console.log(role);
   // Sidebar Responsive Handler
   const handleToggle = () => {
     setActive(!isActive);
@@ -110,14 +110,16 @@ const Sidebar = () => {
               address="/dashboard/profile"
               icon={VscAccount}
             ></MenuItem>
-            <button
+            <Link
+            to='/'
               onClick={logOut}
+              
               className="flex w-full items-center px-4 py-2 mt-5 text-[#890C25] hover:bg-[#890C25]   hover:text-white transition-colors duration-300 transform"
             >
               <GrLogout className="w-5 h-5" />
 
               <span className="mx-4 font-medium">Logout</span>
-            </button>
+            </Link>
           </div>
         </div>
       </>

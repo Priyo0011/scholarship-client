@@ -59,6 +59,10 @@ const UserDataRow = ({ user, refetch }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axiosSecure.delete(`/users/${user._id}`).then((res) => {
+          if (loggedInUser.email === user.email) {
+            toast.error("Action Not Allowed");
+            return setIsOpen(false);
+          }
           if (res.data.deletedCount > 0) {
             refetch();
             Swal.fire({

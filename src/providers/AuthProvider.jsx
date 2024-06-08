@@ -41,13 +41,10 @@ const AuthProvider = ({ children }) => {
       return sendPasswordResetEmail(auth, email)
     }
   
-    const logOut = async () => {
-      setLoading(true)
-      await axios.get(`${import.meta.env.VITE_API_URL}/logout`, {
-        withCredentials: true,
-      })
-      return signOut(auth)
-    }
+    const logOut = () => {
+      setLoading(true);
+      return signOut(auth);
+  }
   
     const updateUserProfile = (name, photo) => {
       return updateProfile(auth.currentUser, {

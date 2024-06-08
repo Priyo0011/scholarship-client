@@ -1,0 +1,44 @@
+[
+  {
+    "reviewer_image": "https://i.ibb.co/cFJk3s7/1517034956958.jpg",
+    "reviewer_name": "John Doe",
+    "review_date": "2023-05-14",
+    "rating_point": 4.8,
+    "reviewer_comments": "This scholarship greatly aided my academic journey. Highly recommend applying!"
+  },
+  {
+    "reviewer_image": "https://i.ibb.co/h7HgTP2/c62tv78s0u65j7jq6ajq8nadq8-SY450-CR0-0-450-450.jpg",
+    "reviewer_name": "Jane Smith",
+    "review_date": "2023-04-22",
+    "rating_point": 3.5,
+    "reviewer_comments": "The scholarship process was smooth, but the amount could be higher."
+  },
+  {
+    "reviewer_image": "https://i.ibb.co/gSB8509/john-doe.jpg",
+    "reviewer_name": "Samuel Lee",
+    "review_date": "2023-03-30",
+    "rating_point": 5.0,
+    "reviewer_comments": "Excellent scholarship program! It covered all my expenses and more."
+  },
+  {
+    "reviewer_image": "https://i.ibb.co/g7s51P6/3dio67b3l94tbbtgta0gock3pi-SX450-CR0-0-450-450.jpg",
+    "reviewer_name": "Nina Brown",
+    "review_date": "2023-06-01",
+    "rating_point": 2.0,
+    "reviewer_comments": "The application process was tedious and the support was minimal."
+  },
+  {
+    "reviewer_image": "https://i.ibb.co/gSB8509/john-doe.jpg",
+    "reviewer_name": "Liam Wilson",
+    "review_date": "2023-02-18",
+    "rating_point": 4.2,
+    "reviewer_comments": "A good scholarship that helped reduce my financial burden."
+  },
+  {
+    "reviewer_image": "https://i.ibb.co/cFJk3s7/1517034956958.jpg",
+    "reviewer_name": "Olivia Adams",
+    "review_date": "2023-01-05",
+    "rating_point": 1.5,
+    "reviewer_comments": "Not very helpful. The amount was too small to make a difference."
+  }
+]
