@@ -87,11 +87,11 @@ const Sidebar = () => {
               
               <nav>
                 {/*  user */}
-                {role === "User" && <UserMenu></UserMenu>}
+                {role === "user" && <UserMenu></UserMenu>}
                 {/* Moderator */}
-                {role === "Moderator" && <ModeratorMenu></ModeratorMenu>}
+                {role === "moderator" && <ModeratorMenu></ModeratorMenu>}
                 {/*  */}
-                {role === "Admin" && <AdminMenu></AdminMenu>}
+                {role === "admin" && <AdminMenu></AdminMenu>}
               </nav>
             </div>
           </div>

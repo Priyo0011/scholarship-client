@@ -14,6 +14,9 @@ import ManageScholarships from "../pages/Dashbord/Moderator/ManageScholarships";
 import MyApplication from "../pages/Dashbord/User/MyApplication";
 import AllAppliedScholarship from "../pages/Dashbord/Moderator/AllAppliedScholarship";
 import ApplyForm from "../pages/Dashbord/User/ApplyForm";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import AMRoute from "./AMRoute";
 
 export const router = createBrowserRouter([
   {
@@ -26,13 +29,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/all-scholarship",
-        element: <AllScholarship></AllScholarship>,
+        element: (
+          <PrivateRoute>
+            <AllScholarship></AllScholarship>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/university/:id",
-        element: <ScholarshipDetails></ScholarshipDetails>,
+        element: (
+          <PrivateRoute>
+            <ScholarshipDetails></ScholarshipDetails>
+          </PrivateRoute>
+        ),
       },
-      
     ],
   },
   {
@@ -44,40 +54,80 @@ export const router = createBrowserRouter([
     element: <SignUp></SignUp>,
   },
   {
-    path: '/dashboard',
-    element:<DashboardLayout></DashboardLayout>,
-    children:[
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
       {
-        index:true,
+        index: true,
         element: <Common></Common>,
       },
       {
-        path:'add-scholarship',
-        element: <AddScholarship></AddScholarship>,
+        path: "add-scholarship",
+        element: (
+          <PrivateRoute>
+            <AMRoute>
+              <AddScholarship></AddScholarship>
+            </AMRoute>
+          </PrivateRoute>
+        ),
       },
       {
-        path:'manage-scholarships',
-        element: <ManageScholarships></ManageScholarships>,
+        path: "manage-scholarships",
+        element: (
+          <PrivateRoute>
+            <AMRoute>
+              <ManageScholarships></ManageScholarships>
+            </AMRoute>
+          </PrivateRoute>
+        ),
       },
       {
-        path:'my-application',
-        element: <MyApplication></MyApplication>,
+        path: "my-application",
+        element: (
+          <PrivateRoute>
+            <MyApplication></MyApplication>
+          </PrivateRoute>
+        ),
       },
       {
-        path:'manage-applied-scholarship',
-        element: <AllAppliedScholarship></AllAppliedScholarship>,
+        path: "manage-applied-scholarship",
+        element: (
+          <PrivateRoute>
+            <AMRoute>
+              <AllAppliedScholarship></AllAppliedScholarship>
+            </AMRoute>
+          </PrivateRoute>
+        ),
       },
       {
-        path:'apply-form',
-        element: <ApplyForm></ApplyForm>,
+        path: "apply-form",
+        element: (
+          <PrivateRoute>
+            <ApplyForm></ApplyForm>
+          </PrivateRoute>
+        ),
       },
       {
         path: "profile",
-        element: <Profile></Profile>,
+        element: (
+          <PrivateRoute>
+            <Profile></Profile>
+          </PrivateRoute>
+        ),
       },
       {
         path: "manage-users",
-        element: <ManageUsers></ManageUsers>,
+        element: (
+          <PrivateRoute>
+            <AdminRoute>
+              <ManageUsers></ManageUsers>
+            </AdminRoute>
+          </PrivateRoute>
+        ),
       },
     ],
   },

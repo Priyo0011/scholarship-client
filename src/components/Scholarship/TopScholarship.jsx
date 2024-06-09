@@ -2,28 +2,26 @@ import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
 import ScholarshipCard from "./ScholarshipCard";
+import LoadingSpinner from "../Shared/LoadingSpinner";
+import useAxiosCommon from "../../hooks/useAxiosCommon";
+import { useQuery } from "@tanstack/react-query";
 
 const TopScholarship = () => {
-  const [scholarship, setScholarship] = useState([]);
   const [sixData, setSixData] = useState([]);
 
-  useEffect(() => {
-    const fetchScholarship = async () => {
-      try {
-        const res = await fetch("http://localhost:9000/university");
-        const jsonScholarship = await res.json();
-        setScholarship(jsonScholarship);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchScholarship();
-  }, []);
+  const axiosCommon = useAxiosCommon();
+  const { data: university = [], isLoading } = useQuery({
+    queryKey: ["university"],
+    queryFn: async () => {
+      const { data } = await axiosCommon.get(`/university`);
+      return data;
+    },
+  });
 
   useEffect(() => {
-    setSixData(scholarship.slice(0, 6));
-  }, [scholarship]);
+    setSixData(university.slice(0, 6));
+  }, [university]);
+  if (isLoading) return <LoadingSpinner />;
   return (
     <section className="md:w-[1520px] mx-auto mb-24">
       <div className="my-10">
