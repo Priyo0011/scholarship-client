@@ -7,12 +7,18 @@ import "@smastrom/react-rating/style.css";
 import { useState } from "react";
 import ApplyModal from "../Modal/ApplyModal";
 import useAuth from "../../hooks/useAuth";
+import ReviwsModel from "../Modal/ReviwsModel";
 const ScholarshipDetails = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
   const { id } = useParams();
   const axiosCommon = useAxiosCommon();
-const {user}=useAuth()
-  const { data: university = {}, isLoading ,refetch} = useQuery({
+  const { user } = useAuth();
+  const {
+    data: university = {},
+    isLoading,
+    refetch,
+  } = useQuery({
     queryKey: ["university", id],
     queryFn: async () => {
       const { data } = await axiosCommon.get(`/university/${id}`);
@@ -22,9 +28,13 @@ const {user}=useAuth()
 
   if (isLoading) return <LoadingSpinner />;
   const closeModal = () => {
-    setIsOpen(false)
-  }
-  const totalPrice = parseInt(university.service_charge) + parseInt(university.application_fees);
+    setIsOpen(false);
+  };
+  const closeModal2 = () => {
+    setIsOpen2(false);
+  };
+  const totalPrice =
+    parseInt(university.service_charge) + parseInt(university.application_fees);
   return (
     <div className="md:py-32 py-10 md:px-40 px-2">
       <figure>
@@ -115,23 +125,26 @@ const {user}=useAuth()
           </div>
           <div className="mt-8">
             <div>
-              <button onClick={() => setIsOpen(true)} className=" px-3 py-2 rounded-xl bg-[#890C25] text-white uppercase hover:shadow-lg hover:shadow-[#9e6372]">
+              <button
+                onClick={() => setIsOpen(true)}
+                className=" px-3 py-2 rounded-xl bg-[#890C25] text-white uppercase hover:shadow-lg hover:shadow-[#9e6372]"
+              >
                 Apply Scholarship
               </button>
             </div>
             <ApplyModal
-            isOpen={isOpen}
-            refetch={refetch}
-            closeModal={closeModal}
-            applyInfo={{
-              ...university,
-              price: totalPrice,
-              user: {
-                name: user?.displayName,
-                email: user?.email,
-                image: user?.photoURL,
-              },
-            }}
+              isOpen={isOpen}
+              refetch={refetch}
+              closeModal={closeModal}
+              applyInfo={{
+                ...university,
+                price: totalPrice,
+                user: {
+                  name: user?.displayName,
+                  email: user?.email,
+                  image: user?.photoURL,
+                },
+              }}
             ></ApplyModal>
           </div>
         </div>
@@ -146,28 +159,25 @@ const {user}=useAuth()
           </div>
           <div>
             <div className="p-4">
-              <h1 className="text-2xl uppercase text-center text-[#890C25] font-bold">
-                All Review
-              </h1>
-              <div className="p-6 sm:p-12 dark:bg-gray-50 dark:text-gray-800">
-                <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
-                  <img
-                    src="https://source.unsplash.com/75x75/?portrait"
-                    alt=""
-                    className="self-center flex-shrink-0 w-24 h-24 border rounded-full md:justify-self-start dark:bg-gray-500 dark:border-gray-300"
-                  />
-                  <div className="flex flex-col">
-                    <h4 className="text-lg font-semibold text-center md:text-left">
-                      Leroy Jenkins
-                    </h4>
-                    <p className="dark:text-gray-600">
-                      Sed non nibh iaculis, posuere diam vitae, consectetur
-                      neque. Integer velit ligula, semper sed nisl in, cursus
-                      commodo elit. Pellentesque sit amet mi luctus ligula
-                      euismod lobortis ultricies et nibh.
-                    </p>
-                  </div>
-                </div>
+
+              <div>
+                <button
+                  onClick={() => setIsOpen2(true)}
+                  className=" px-3 py-2 rounded-xl bg-[#890C25] text-white uppercase hover:shadow-lg hover:shadow-[#9e6372]"
+                >
+                  Add Review
+                </button>
+                <ReviwsModel
+                  isOpen2={isOpen2}
+                  refetch={refetch}
+                  closeModal2={closeModal2}
+                  reviewInfo={{
+                    user: {
+                      name: user?.displayName,
+                      image: user?.photoURL,
+                    },
+                  }}
+                ></ReviwsModel>
               </div>
             </div>
           </div>

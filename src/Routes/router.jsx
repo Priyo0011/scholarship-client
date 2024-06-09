@@ -17,6 +17,7 @@ import ApplyForm from "../pages/Dashbord/User/ApplyForm";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import AMRoute from "./AMRoute";
+import MyReviews from "../pages/Dashbord/User/MyReviews";
 
 export const router = createBrowserRouter([
   {
@@ -108,6 +109,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ApplyForm></ApplyForm>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-review",
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
           </PrivateRoute>
         ),
       },

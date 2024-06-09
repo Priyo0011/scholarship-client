@@ -12,7 +12,7 @@ const UserMenu = () => {
       ></MenuItem>
       <MenuItem
         label="My reviews"
-        address="my-reviews"
+        address="my-review"
         icon={FaEye}
       ></MenuItem>
     </>

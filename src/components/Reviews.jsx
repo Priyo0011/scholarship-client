@@ -15,7 +15,7 @@ const Reviews = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <section className="w-[1520px] mx-auto mt-24 mb-24">
+    <section className=" mx-auto mt-24 mb-24">
       <h1 className="text-4xl text-center text-[#890C25] font-bold my-10">
         Review
       </h1>
