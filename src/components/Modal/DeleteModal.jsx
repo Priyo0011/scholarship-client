@@ -45,7 +45,6 @@ const DeleteModal = ({ closeModal, isOpen, handleDelete, id }) => {
                     You cannot undo once it&apos;s done!
                   </p>
                 </div>
-                <hr className="mt-8 " />
                 <div className="flex mt-2 justify-around">
                   <button
                     onClick={() => {

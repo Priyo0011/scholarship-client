@@ -22,6 +22,7 @@ const ManageScholarships = () => {
       return data
     },
   })
+
   //   delete
   const { mutateAsync } = useMutation({
     mutationFn: async id => {
