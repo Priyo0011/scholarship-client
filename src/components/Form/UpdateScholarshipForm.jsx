@@ -118,6 +118,10 @@ const UpdateScholarshipForm = ({
             <label className="block text-gray-700">Scholarship Category:</label>
             <select
               name="scholarship_category"
+              value={scholarshipData?.scholarship_category}
+              onChange={e =>
+                setScholarshipData({ ...scholarshipData, scholarship_category: e.target.value })
+              }
               className="mt-1 block w-full px-4 py-3 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
             >
               <option value="">Select</option>
@@ -130,6 +134,10 @@ const UpdateScholarshipForm = ({
             <label className="block text-gray-700">Degree:</label>
             <select
               name="degree"
+              value={scholarshipData?.degree}
+              onChange={e =>
+                setScholarshipData({ ...scholarshipData, degree: e.target.value })
+              }
               className="mt-1 block w-full px-4 py-3 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
             >
               <option value="">Select</option>
@@ -147,6 +155,10 @@ const UpdateScholarshipForm = ({
             <input
               type="number"
               name="tuition_fees"
+              value={scholarshipData?.tuition_fees}
+              onChange={e =>
+                setScholarshipData({ ...scholarshipData, tuition_fees: e.target.value })
+              }
               className="mt-1 block w-full px-4 py-3 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
             />
           </div>
@@ -155,6 +167,10 @@ const UpdateScholarshipForm = ({
             <input
               type="number"
               name="application_fees"
+              value={scholarshipData?.application_fees}
+              onChange={e =>
+                setScholarshipData({ ...scholarshipData, application_fees: e.target.value })
+              }
               className="mt-1 block w-full px-4 py-3 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
             />
           </div>
@@ -165,6 +181,10 @@ const UpdateScholarshipForm = ({
             <input
               type="number"
               name="service_charge"
+              value={scholarshipData?.service_charge}
+              onChange={e =>
+                setScholarshipData({ ...scholarshipData, service_charge: e.target.value })
+              }
               className="mt-1 block w-full px-4 py-3 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
             />
           </div>
@@ -172,6 +192,7 @@ const UpdateScholarshipForm = ({
             <label className="block text-gray-700">Application Deadline:</label>
             <DatePicker
               name="application_deadline"
+              value={scholarshipData?.application_deadline}
               className="mt-1  block px-4 py-3 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
               selected={startDate}
               onChange={(date) => setStartDate(date)}
@@ -186,6 +207,8 @@ const UpdateScholarshipForm = ({
             <DatePicker
               disabled
               name="post_date"
+              value={scholarshipData?.post_date}
+              
               className="mt-1  block px-4 py-3 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
               selected={start2Date}
               onChange={(date) => setStart2Date(date)}
@@ -210,6 +233,10 @@ const UpdateScholarshipForm = ({
             <textarea
               type="text"
               name="scholarship_description"
+              value={scholarshipData?.scholarship_description}
+              onChange={e =>
+                setScholarshipData({ ...scholarshipData, scholarship_description: e.target.value })
+              }
               className="block w-full px-4 py-3 h-32 text-gray-800 border border-[#890C25] focus:outline-rose-500 rounded-md"
             />
           </div>
