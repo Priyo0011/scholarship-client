@@ -125,7 +125,9 @@ export const router = createBrowserRouter([
         path: "manage-reviews",
         element: (
           <PrivateRoute>
-            <AllReviews></AllReviews>
+            <AMRoute>
+              <AllReviews></AllReviews>
+            </AMRoute>
           </PrivateRoute>
         ),
       },

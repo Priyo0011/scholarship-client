@@ -4,9 +4,11 @@ import { TbListDetails } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import DeleteModal from "../../Modal/DeleteModal";
 import { useState } from "react";
+import UpdateScholarshipModal from "../../Modal/UpdateScholarshipModal";
 
-const ScholarshipDataRow = ({ scholarship, handleDelete }) => {
-  let [isOpen, setIsOpen] = useState(false);
+const ScholarshipDataRow = ({ scholarship, handleDelete,refetch }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false)
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -53,7 +55,7 @@ const ScholarshipDataRow = ({ scholarship, handleDelete }) => {
         </button>
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-        <button className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+        <button onClick={() => setIsEditModalOpen(true)} className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
           <span
             aria-hidden="true"
             className="absolute inset-0 bg-green-500 rounded-full"
@@ -62,6 +64,12 @@ const ScholarshipDataRow = ({ scholarship, handleDelete }) => {
             <FaEdit />
           </span>
         </button>
+        <UpdateScholarshipModal
+          isOpen={isEditModalOpen}
+          setIsEditModalOpen={setIsEditModalOpen}
+          scholarship={scholarship}
+          refetch={refetch}
+        />
       </td>
       <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
         <button onClick={() => setIsOpen(true)} className="relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
