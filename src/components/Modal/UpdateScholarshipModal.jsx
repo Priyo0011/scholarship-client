@@ -41,7 +41,6 @@ const UpdateScholarshipModal = ( { setIsEditModalOpen, scholarship, refetch,isOp
     e.preventDefault()
     const updatedScholarshipData = Object.assign({}, scholarshipData)
     delete updatedScholarshipData._id
-    console.log(updatedScholarshipData)
     try {
       const { data } = await axiosSecure.put(
         `/scholarship/update/${scholarship?._id}`,

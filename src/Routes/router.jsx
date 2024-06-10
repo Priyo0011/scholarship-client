@@ -19,11 +19,13 @@ import AdminRoute from "./AdminRoute";
 import AMRoute from "./AMRoute";
 import MyReviews from "../pages/Dashbord/User/MyReviews";
 import AllReviews from "../pages/Dashbord/Moderator/AllReviews";
+import ErrorPage from "../pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
