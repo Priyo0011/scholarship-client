@@ -25,7 +25,6 @@ const AllScholarship = () => {
               type="text"
               name="search"
             />
-
             <button className="px-1 md:px-4 py-3 text-sm font-medium tracking-wider text-gray-100 uppercase transition-colors duration-300 transform bg-[#890C25] rounded-md focus:outline-none">
               Search
             </button>

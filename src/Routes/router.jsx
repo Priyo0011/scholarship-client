@@ -18,6 +18,7 @@ import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
 import AMRoute from "./AMRoute";
 import MyReviews from "../pages/Dashbord/User/MyReviews";
+import AllReviews from "../pages/Dashbord/Moderator/AllReviews";
 
 export const router = createBrowserRouter([
   {
@@ -117,6 +118,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "manage-reviews",
+        element: (
+          <PrivateRoute>
+            <AllReviews></AllReviews>
           </PrivateRoute>
         ),
       },

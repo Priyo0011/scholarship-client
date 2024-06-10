@@ -1,28 +1,28 @@
 import { useQuery } from "@tanstack/react-query";
-import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useAuth from "../../../hooks/useAuth";
 import LoadingSpinner from "../../../components/Shared/LoadingSpinner";
 import ReviewRow from "../../../components/Dashboard/TableRows/ReviewRow";
 
-const MyReviews = () => {
-    const { user } = useAuth()
-    const axiosSecure = useAxiosSecure()
-  
-    const {
-      data: reviews = [],
-      isLoading,
-      refetch,
-    } = useQuery({
-      queryKey: ['my-reviews', user?.email],
-      queryFn: async () => {
-        const { data } = await axiosSecure.get(`/my-reviews/${user?.email}`)
-        return data
-      },
-     
-    })
-    if (isLoading) return <LoadingSpinner />
-  return (
-    <>
+
+const AllReviews = () => {
+    const { user } = useAuth();
+  const axiosSecure = useAxiosSecure();
+
+  const {
+    data: reviews = [],
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["reviews", user?.email],
+    queryFn: async () => {
+      const { data } = await axiosSecure.get(`/reviews`);
+      return data;
+    },
+  });
+  if (isLoading) return <LoadingSpinner />;
+    return (
+        <>
       <div className="container mx-auto px-4 sm:px-8">
         <div className="py-8">
           <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -71,7 +71,7 @@ const MyReviews = () => {
         </div>
       </div>
     </>
-  );
+    );
 };
 
-export default MyReviews;
+export default AllReviews;

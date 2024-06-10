@@ -13,7 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { TbFidgetSpinner } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
-const ReviwsModel = ({ closeModal2, isOpen2 }) => {
+const ReviwsModel = ({ closeModal2, isOpen2,reviewInfo }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
@@ -49,6 +49,7 @@ const ReviwsModel = ({ closeModal2, isOpen2 }) => {
         rating_point,
         review_user,
         reviewer_comments,
+        reviewInfo,
       };
       await mutateAsync(reviewData);
     } catch (err) {

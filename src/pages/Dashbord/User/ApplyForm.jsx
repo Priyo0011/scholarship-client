@@ -182,11 +182,10 @@ const ApplyForm = () => {
             type="submit"
             className="w-full px-4 py-3 text-white bg-[#890C25] rounded-md"
           >
-            Submit
             {loading ? (
             <TbFidgetSpinner className="animate-spin m-auto" />
           ) : (
-            ""
+            "Submit"
           )}
           </button>
         </form>

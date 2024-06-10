@@ -172,6 +172,7 @@ const ScholarshipDetails = () => {
                   refetch={refetch}
                   closeModal2={closeModal2}
                   reviewInfo={{
+                    ...university,
                     user: {
                       name: user?.displayName,
                       image: user?.photoURL,

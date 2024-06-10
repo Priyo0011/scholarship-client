@@ -6,7 +6,7 @@ const ScholarshipCard = ({ university }) => {
     university_name,
     university_image,
     scholarship_category,
-    university_location,
+
     application_deadline,
     subject_category,
     rating,
@@ -33,12 +33,6 @@ const ScholarshipCard = ({ university }) => {
             <h1 className="ml-8">subject: {subject_category}</h1>
             <h2 className="ml-8">scholarship: {scholarship_category}</h2>
           </div>
-          <h1>
-            <span className="font-semibold text-[#890C25] uppercase">
-            location:
-            </span>
-            <span> {university_location.city},{university_location.country}</span>
-          </h1>
           <h1>
             <span className="font-semibold text-[#890C25] uppercase">
             application fees:
