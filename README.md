@@ -1,8 +1,23 @@
-# React + Vite
+# live link :
+- https://scholarship-91d7e.web.app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features:
+- 
+- 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How to run localhost:
+- git clone (past copylink)
+- npm i 
+- npm run dev
+# npm package:
+- firebase
+- react-icon
+- mamba-UI
+- prop-types
+- daisyui
+- reactrouter
+- tailwindcss
+- sweetalert2
+- toster
+- tanstack
+- hooks
