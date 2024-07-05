@@ -1,7 +1,7 @@
 # live link :
 - https://scholarship-91d7e.web.app
 
-
+# Description
 "Victory Scholarship" is a website for handling scholarship applications, including student form submission and admin panel for verification & stipend management. It's all about making scholarships digital for students, making life easier for student. My "victory scholarship" project makes applying for scholarships simpler and helps administrators manage it better. There are some improvements needed like making the design better. I'm not great at designing Figma .i need a good design on Figma for scholarships, I use it to make things look better.
 
 
